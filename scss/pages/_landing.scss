@@ -1,0 +1,306 @@
+.theBackground {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.79) 0.01%, rgba(134, 134, 134, 0) 70%), url('/img/backg.jpg') repeat fixed 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    position: relative;
+}
+
+
+.banner {
+    h2 {
+        font-size: clamp(2rem, 7vh, 3rem);
+        line-height: 1.2;
+        
+       
+    }
+    p {
+        width: 50%;
+        text-align: justify;
+        @include mediaQuery () {
+            width: 100%;
+        }
+    }
+    @include mediaQuery () {
+            text-align: center;
+        }
+    
+    
+}
+.about {
+    &__wrapper {
+        @include grid(3,1rem);
+        @include mediaQuery() {
+            @include grid(1, 2rem)
+        }
+    }
+
+    &__card {
+        position: relative;
+        img {
+            height: 380px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        &::after {
+            visibility: hidden;
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0.4rem;
+            font-size: 1.5rem;
+            left: 0;
+            right: 0;
+            color: white;
+            background:#f5b53681;
+            padding: 1rem;
+        }
+        &:hover::after {
+            visibility: visible;
+            content: attr(data-hover);
+
+        }
+        
+    }
+    @include mediaQuery () {
+        p {
+            text-align: justify;
+        }
+    }
+}
+.t-white {
+    color: $clr-white !important;
+}
+
+.Offers {
+    background: url(/img/special_offers.jpg) repeat fixed 100%;
+    background-color: rgba(128, 128, 128, 0.692);
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    h3 {
+        font-weight: 500;
+    }
+    h2 {
+        font-weight: 500;
+        font-size: 3rem;
+    }
+}
+
+.ourLodges {
+    &__items{
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 2rem;
+        padding: 2rem;
+
+        
+    }
+    &__content {
+        h2 {
+            font-size: 3rem;
+            
+        }
+        padding: 3rem;
+        background: url('/img/rocklodge_1.jpg');
+        background-size: cover;
+        background-color: gray;
+        background-blend-mode: multiply;
+        
+
+    }
+    &__details {
+        border-left: solid 5px $clr-primary;
+        padding-left: 3rem;
+        .videobox {
+            padding: 0.5rem;
+            position: relative;
+            width: 326px;
+            height: 200px;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            right: 8px;
+            background-color: $clr-primary;
+            width: 70%;
+            height: 60%;
+        }
+        iframe {
+            position: absolute;
+        }
+
+    }
+
+    &__photos {
+        .thePhoto {
+            img {
+                height: 196px;
+                width: 100%;
+                object-fit: cover;
+                object-position: center;
+                z-index: 5;
+            }
+            
+        }
+        ul {
+            @include grid(2,2rem);
+          }
+    }
+
+    .tns-nav {
+        position: relative;
+        margin-bottom: 3rem;
+        text-align: center;
+    
+        &::after {
+            content:'';
+            position: absolute;
+            width: 40%;
+            height: 0.1rem;
+            background-color: $clr-primary;
+            left: 50%;
+            top: -1rem;
+            transform: translate(-50%, -50%);
+            opacity: 40%;
+        }
+        &::before {
+            content:'';
+            position: absolute;
+            width: 40%;
+            height: 0.1rem;
+            background-color: $clr-primary;
+            left: 50%;
+            bottom: -1rem;
+            transform: translate(-50%, -50%);
+            opacity: 40%;
+        }
+        button {
+            width: 5rem;
+            height: 1rem;
+            background: none;
+            color: rgba(128, 128, 128, 0.801);
+            font-size: 2rem;
+            border: none;
+            margin-right: 2rem;
+            margin-left: 2rem;
+    
+            &:nth-child(1)::after{
+                content:'Rock';
+                text-align: center;
+            }
+            &:nth-child(2)::after{
+                content:'Safari';
+                text-align: center;
+            }
+            &:nth-child(3)::after{
+                content:'Cliff';
+                text-align: center;
+            }
+            &.tns-nav-active::after {
+                color: $clr-primary;
+              }
+        }
+    }
+    .tns-outer {
+        button[data-action] {
+          display: none;
+        }
+      }
+}
+.overlay {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: -1rem;
+      right: -1rem;
+      background-color: $clr-primary;
+      width: 80%;
+      height: 80%;
+      z-index: -5;
+    }
+  }
+
+.reviews {
+    background-color: #d9d9d93d;
+    &__content {
+        margin: 0 20rem;
+    }
+    h3 {
+        font-weight: 500;
+    }
+    h2 {
+        font-weight: 600;
+    }
+    
+    .tns-nav{
+        button {
+            height: 15px;
+            width: 15px;
+            border-radius: 50%;
+            background-color: gray;
+            border: none;
+            margin: 0 4px;
+        }
+        
+    }
+    .tns-nav .tns-nav-active{
+        background-color: $clr-primary;
+    }
+}
+.travel {
+    &__items {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 3rem;
+        gap: 2rem;
+    }
+    h2 {
+        font-size: 3rem;
+    }
+    &__details {
+        h3 {
+            font-size: 2rem;
+            font-weight: 600;
+        }
+        padding: 5rem;
+        background: url(/img/Rectangle\ 11.png);
+        background-size: cover;
+
+        
+            width: 100%;
+            height: 40rem;
+    }
+    &__details2 {
+        h3 {
+            font-size: 2rem;
+            font-weight: 600;
+        }
+        padding: 5rem;
+        background: url(/img/Rectangle\ 12.png) ;
+        background-size: cover;
+        
+    }
+}
+
+.rates {
+    margin: 0 5rem;
+    &__wrapper {
+        @include grid (3,1fr);
+    }
+    &__items {
+        padding: 2rem;
+        border: black;
+        background: none;
+        border-radius: 15px;
+        ul {
+            li {
+                border-bottom: solid 1px gray;
+            }
+        }
+    }
+}
+

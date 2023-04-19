@@ -1,0 +1,27 @@
+.footer {
+    background-color: $clr-black;
+    .w-10r-clamp{
+        width: clamp(8rem, 10vh, 10rem);
+    }
+    .w-6r-clamp {
+        width: clamp(4rem, 6vh, 5rem);
+    }
+    &__logo {
+        gap: 1.5rem;
+    }
+    &__icons {
+       
+        .d--flex{
+            gap: 1rem;  
+            font-size: 1.5rem;     
+        }
+        li {
+            color: white;
+        }    
+    }
+    &__wrapper {
+        border-bottom: solid 1px $clr-white;
+    }
+    
+
+}

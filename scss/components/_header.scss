@@ -1,0 +1,95 @@
+.header {
+    background-color: #2b2b2b9d;
+    backdrop-filter: blur(5px);
+    .w-10r-clamp{
+        width: clamp(8rem, 10vh, 10rem);
+    }
+    .w-6r-clamp {
+        width: clamp(4rem, 6vh, 5rem);
+    }
+    .w-3r {
+        width: 3rem;
+    }
+    &__logo {
+        gap: 1.5rem;
+    }
+    &__nav {
+        gap: 1.5rem;
+    }
+    &__nav ul {
+        gap: 1.5rem;
+        a {
+            color: $clr-white;
+        }
+    }
+
+}
+
+.toggle {
+    &__menu {
+        cursor: pointer;
+        display: none;
+        span {
+            background-color: $clr-primary;
+            display: block;
+            height: 0.2rem;
+            width: 2rem;
+            margin-bottom: 0.4rem;
+            border-radius: 0.5rem;
+            transition: 0.5s ease-in;
+        }
+    }
+    
+}
+nav ul li a.active{
+    color: $clr-primary;
+}
+
+@media (max-width: 768px) {
+    .toggle{
+        &__menu {
+            display: block;
+        }
+    }
+    nav {
+        &.open ul {
+            right: -50%;
+            transition: 0.5s ease-in;
+        }
+        ul {
+            display: block !important;
+            position: absolute;
+            right: -120%;
+            top: 6.8rem;
+            background-color: $clr-black;
+            width: 100vw;
+            height: 100vh;
+            text-align: left;
+            transition: 0.5s ease-in;
+            li a {
+                display: inline-block !important;
+                width: 100%;
+                padding: 1rem;
+                border-bottom: 1px solid $clr-black;
+            }
+            li:hover {
+                background-color: $clr-primary;
+            }
+            li:hover a{
+                color: $clr-white;
+            }
+        }
+    }
+    .toggle__menu.open span:nth-child(1){
+        transition: 0.5s ease;
+        transform: translate(-2px, 7.3px) rotate(45deg);
+    }
+    .toggle__menu.open span:nth-child(2){
+        opacity: 0;
+        transition: 0s;
+    }
+    .toggle__menu.open span:nth-child(3){
+        transition: 0.5s ease;
+        transform: translate(-2px, -12px) rotate(-45deg);
+    }
+}

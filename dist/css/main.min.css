@@ -1,0 +1,731 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", "sans-serif";
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.header {
+  background-color: rgba(43, 43, 43, 0.6156862745);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+.header .w-10r-clamp {
+  width: clamp(8rem, 10vh, 10rem);
+}
+.header .w-6r-clamp {
+  width: clamp(4rem, 6vh, 5rem);
+}
+.header .w-3r {
+  width: 3rem;
+}
+.header__logo {
+  gap: 1.5rem;
+}
+.header__nav {
+  gap: 1.5rem;
+}
+.header__nav ul {
+  gap: 1.5rem;
+}
+.header__nav ul a {
+  color: #f2f2f2;
+}
+
+.toggle__menu {
+  cursor: pointer;
+  display: none;
+}
+.toggle__menu span {
+  background-color: #f5b536;
+  display: block;
+  height: 0.2rem;
+  width: 2rem;
+  margin-bottom: 0.4rem;
+  border-radius: 0.5rem;
+  transition: 0.5s ease-in;
+}
+
+nav ul li a.active {
+  color: #f5b536;
+}
+
+@media (max-width: 768px) {
+  .toggle__menu {
+    display: block;
+  }
+  nav.open ul {
+    right: -50%;
+    transition: 0.5s ease-in;
+  }
+  nav ul {
+    display: block !important;
+    position: absolute;
+    right: -120%;
+    top: 6.8rem;
+    background-color: #2b2b2b;
+    width: 100vw;
+    height: 100vh;
+    text-align: left;
+    transition: 0.5s ease-in;
+  }
+  nav ul li a {
+    display: inline-block !important;
+    width: 100%;
+    padding: 1rem;
+    border-bottom: 1px solid #2b2b2b;
+  }
+  nav ul li:hover {
+    background-color: #f5b536;
+  }
+  nav ul li:hover a {
+    color: #f2f2f2;
+  }
+  .toggle__menu.open span:nth-child(1) {
+    transition: 0.5s ease;
+    transform: translate(-2px, 7.3px) rotate(45deg);
+  }
+  .toggle__menu.open span:nth-child(2) {
+    opacity: 0;
+    transition: 0s;
+  }
+  .toggle__menu.open span:nth-child(3) {
+    transition: 0.5s ease;
+    transform: translate(-2px, -12px) rotate(-45deg);
+  }
+}
+.footer {
+  background-color: #2b2b2b;
+}
+.footer .w-10r-clamp {
+  width: clamp(8rem, 10vh, 10rem);
+}
+.footer .w-6r-clamp {
+  width: clamp(4rem, 6vh, 5rem);
+}
+.footer__logo {
+  gap: 1.5rem;
+}
+.footer__icons .d--flex {
+  gap: 1rem;
+  font-size: 1.5rem;
+}
+.footer__icons li {
+  color: white;
+}
+.footer__wrapper {
+  border-bottom: solid 1px #f2f2f2;
+}
+
+.theBackground {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.79) 0.01%, rgba(134, 134, 134, 0) 70%), url("/img/backg.jpg") repeat fixed 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  position: relative;
+}
+
+.banner h2 {
+  font-size: clamp(2rem, 7vh, 3rem);
+  line-height: 1.2;
+}
+.banner p {
+  width: 50%;
+  text-align: justify;
+}
+@media screen and (max-width: 48rem) {
+  .banner p {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 48rem) {
+  .banner {
+    text-align: center;
+  }
+}
+
+.about__wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+}
+@media screen and (max-width: 48rem) {
+  .about__wrapper {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 2rem;
+  }
+}
+.about__card {
+  position: relative;
+}
+.about__card img {
+  height: 380px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.about__card::after {
+  visibility: hidden;
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0.4rem;
+  font-size: 1.5rem;
+  left: 0;
+  right: 0;
+  color: white;
+  background: rgba(245, 181, 54, 0.5058823529);
+  padding: 1rem;
+}
+.about__card:hover::after {
+  visibility: visible;
+  content: attr(data-hover);
+}
+@media screen and (max-width: 48rem) {
+  .about p {
+    text-align: justify;
+  }
+}
+
+.t-white {
+  color: #f2f2f2 !important;
+}
+
+.Offers {
+  background: url(/img/special_offers.jpg) repeat fixed 100%;
+  background-color: rgba(128, 128, 128, 0.692);
+  background-blend-mode: multiply;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+.Offers h3 {
+  font-weight: 500;
+}
+.Offers h2 {
+  font-weight: 500;
+  font-size: 3rem;
+}
+
+.ourLodges__items {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+}
+.ourLodges__content {
+  padding: 3rem;
+  background: url("/img/rocklodge_1.jpg");
+  background-size: cover;
+  background-color: gray;
+  background-blend-mode: multiply;
+}
+.ourLodges__content h2 {
+  font-size: 3rem;
+}
+.ourLodges__details {
+  border-left: solid 5px #f5b536;
+  padding-left: 3rem;
+}
+.ourLodges__details .videobox {
+  padding: 0.5rem;
+  position: relative;
+  width: 326px;
+  height: 200px;
+}
+.ourLodges__details .overlay {
+  position: absolute;
+  top: 0;
+  right: 8px;
+  background-color: #f5b536;
+  width: 70%;
+  height: 60%;
+}
+.ourLodges__details iframe {
+  position: absolute;
+}
+.ourLodges__photos .thePhoto img {
+  height: 196px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  z-index: 5;
+}
+.ourLodges__photos ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+}
+.ourLodges .tns-nav {
+  position: relative;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+.ourLodges .tns-nav::after {
+  content: "";
+  position: absolute;
+  width: 40%;
+  height: 0.1rem;
+  background-color: #f5b536;
+  left: 50%;
+  top: -1rem;
+  transform: translate(-50%, -50%);
+  opacity: 40%;
+}
+.ourLodges .tns-nav::before {
+  content: "";
+  position: absolute;
+  width: 40%;
+  height: 0.1rem;
+  background-color: #f5b536;
+  left: 50%;
+  bottom: -1rem;
+  transform: translate(-50%, -50%);
+  opacity: 40%;
+}
+.ourLodges .tns-nav button {
+  width: 5rem;
+  height: 1rem;
+  background: none;
+  color: rgba(128, 128, 128, 0.801);
+  font-size: 2rem;
+  border: none;
+  margin-right: 2rem;
+  margin-left: 2rem;
+}
+.ourLodges .tns-nav button:nth-child(1)::after {
+  content: "Rock";
+  text-align: center;
+}
+.ourLodges .tns-nav button:nth-child(2)::after {
+  content: "Safari";
+  text-align: center;
+}
+.ourLodges .tns-nav button:nth-child(3)::after {
+  content: "Cliff";
+  text-align: center;
+}
+.ourLodges .tns-nav button.tns-nav-active::after {
+  color: #f5b536;
+}
+.ourLodges .tns-outer button[data-action] {
+  display: none;
+}
+
+.overlay {
+  position: relative;
+}
+.overlay::before {
+  content: "";
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+  background-color: #f5b536;
+  width: 80%;
+  height: 80%;
+  z-index: -5;
+}
+
+.reviews {
+  background-color: rgba(217, 217, 217, 0.2392156863);
+}
+.reviews__content {
+  margin: 0 20rem;
+}
+.reviews h3 {
+  font-weight: 500;
+}
+.reviews h2 {
+  font-weight: 600;
+}
+.reviews .tns-nav button {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: gray;
+  border: none;
+  margin: 0 4px;
+}
+.reviews .tns-nav .tns-nav-active {
+  background-color: #f5b536;
+}
+
+.travel__items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 3rem;
+  gap: 2rem;
+}
+.travel h2 {
+  font-size: 3rem;
+}
+.travel__details {
+  padding: 5rem;
+  background: url(/img/Rectangle\ 11.png);
+  background-size: cover;
+  width: 100%;
+  height: 40rem;
+}
+.travel__details h3 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.travel__details2 {
+  padding: 5rem;
+  background: url(/img/Rectangle\ 12.png);
+  background-size: cover;
+}
+.travel__details2 h3 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.rates {
+  margin: 0 5rem;
+}
+.rates__wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1fr;
+}
+.rates__items {
+  padding: 2rem;
+  border: black;
+  background: none;
+  border-radius: 15px;
+}
+.rates__items ul li {
+  border-bottom: solid 1px gray;
+}
+
+.bg--primary {
+  background-color: #f5b536;
+}
+
+.text--primary {
+  color: #f5b536;
+}
+
+.btn.bg--primary {
+  padding: 0.5rem 1.5rem;
+  color: #2b2b2b;
+  font-weight: 600;
+  border-radius: 6px;
+  font-size: 1rem;
+  display: inline-block;
+  background: #f5b536;
+}
+.btn.bg--primary:hover {
+  background: #eca10c;
+}
+
+.bg--dark {
+  background-color: #2b2b2b;
+}
+
+.text--dark {
+  color: #2b2b2b;
+}
+
+.btn.bg--dark {
+  padding: 0.5rem 1.5rem;
+  color: #2b2b2b;
+  font-weight: 600;
+  border-radius: 6px;
+  font-size: 1rem;
+  display: inline-block;
+  background: #2b2b2b;
+}
+.btn.bg--dark:hover {
+  background: #121212;
+}
+
+.bg--light {
+  background-color: #f2f2f2;
+}
+
+.text--light {
+  color: #f2f2f2;
+}
+
+.btn.bg--light {
+  padding: 0.5rem 1.5rem;
+  color: #2b2b2b;
+  font-weight: 600;
+  border-radius: 6px;
+  font-size: 1rem;
+  display: inline-block;
+  background: #f2f2f2;
+}
+.btn.bg--light:hover {
+  background: #d9d9d9;
+}
+
+.bg--gray {
+  background-color: #3d4045;
+}
+
+.text--gray {
+  color: #3d4045;
+}
+
+.btn.bg--gray {
+  padding: 0.5rem 1.5rem;
+  color: #2b2b2b;
+  font-weight: 600;
+  border-radius: 6px;
+  font-size: 1rem;
+  display: inline-block;
+  background: #3d4045;
+}
+.btn.bg--gray:hover {
+  background: #25272a;
+}
+
+.text--center {
+  text-align: center;
+}
+
+.text--left {
+  text-align: left;
+}
+
+.text--right {
+  text-align: right;
+}
+
+.text--justify {
+  text-align: justify;
+}
+
+.justify--start {
+  justify-content: flex-start;
+}
+
+.justify--center {
+  justify-content: center;
+}
+
+.justify--end {
+  justify-content: flex-end;
+}
+
+.justify--between {
+  justify-content: space-between;
+}
+
+.justify--around {
+  justify-content: space-around;
+}
+
+.d--flex {
+  display: flex;
+}
+
+.d--grid {
+  display: grid;
+}
+
+.d--block {
+  display: block;
+}
+
+.d--inline-block {
+  display: inline-block;
+}
+
+.d--inline {
+  display: inline;
+}
+
+.align--start {
+  align-items: flex-start;
+}
+
+.align--center {
+  align-items: center;
+}
+
+.align--end {
+  align-items: flex-end;
+}
+
+.mb--1 {
+  margin-bottom: 1rem;
+}
+
+.py--1 {
+  padding: 1rem 0;
+}
+
+.my--1 {
+  margin: 1rem 0;
+}
+
+.mx--1 {
+  margin: 0 1rem;
+}
+
+.mb--2 {
+  margin-bottom: 2rem;
+}
+
+.py--2 {
+  padding: 2rem 0;
+}
+
+.my--2 {
+  margin: 2rem 0;
+}
+
+.mx--2 {
+  margin: 0 2rem;
+}
+
+.mb--3 {
+  margin-bottom: 3rem;
+}
+
+.py--3 {
+  padding: 3rem 0;
+}
+
+.my--3 {
+  margin: 3rem 0;
+}
+
+.mx--3 {
+  margin: 0 3rem;
+}
+
+.mb--4 {
+  margin-bottom: 4rem;
+}
+
+.py--4 {
+  padding: 4rem 0;
+}
+
+.my--4 {
+  margin: 4rem 0;
+}
+
+.mx--4 {
+  margin: 0 4rem;
+}
+
+.mb--5 {
+  margin-bottom: 5rem;
+}
+
+.py--5 {
+  padding: 5rem 0;
+}
+
+.my--5 {
+  margin: 5rem 0;
+}
+
+.mx--5 {
+  margin: 0 5rem;
+}
+
+.mb--6 {
+  margin-bottom: 6rem;
+}
+
+.py--6 {
+  padding: 6rem 0;
+}
+
+.my--6 {
+  margin: 6rem 0;
+}
+
+.mx--6 {
+  margin: 0 6rem;
+}
+
+.mb--7 {
+  margin-bottom: 7rem;
+}
+
+.py--7 {
+  padding: 7rem 0;
+}
+
+.my--7 {
+  margin: 7rem 0;
+}
+
+.mx--7 {
+  margin: 0 7rem;
+}
+
+.mb--8 {
+  margin-bottom: 8rem;
+}
+
+.py--8 {
+  padding: 8rem 0;
+}
+
+.my--8 {
+  margin: 8rem 0;
+}
+
+.mx--8 {
+  margin: 0 8rem;
+}
+
+.mb--9 {
+  margin-bottom: 9rem;
+}
+
+.py--9 {
+  padding: 9rem 0;
+}
+
+.my--9 {
+  margin: 9rem 0;
+}
+
+.mx--9 {
+  margin: 0 9rem;
+}
+
+.mb--10 {
+  margin-bottom: 10rem;
+}
+
+.py--10 {
+  padding: 10rem 0;
+}
+
+.my--10 {
+  margin: 10rem 0;
+}
+
+.mx--10 {
+  margin: 0 10rem;
+}/*# sourceMappingURL=main.min.css.map */
